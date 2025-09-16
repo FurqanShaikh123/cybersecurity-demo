@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity Threat Detection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Cybersecurity Threat Detection</h1>
+  </header>
+
+  <main>
+    <section class="tool">
+      <h2>Phishing Detector</h2>
+      <input type="text" id="urlInput" placeholder="Enter website or email">
+      <button onclick="checkPhishing()">Check</button>
+      <div id="phishingResult"></div>
+    </section>
+
+    <section class="tool">
+      <h2>Suspicious Login Analyzer</h2>
+      <textarea id="logInput" placeholder="Paste login logs"></textarea>
+      <button onclick="analyzeLogs()">Analyze</button>
+      <div id="logResult"></div>
+    </section>
+
+    <section class="tool">
+      <h2>Network Anomaly Detector</h2>
+      <textarea id="networkInput" placeholder="Paste network data"></textarea>
+      <button onclick="detectAnomaly()">Detect</button>
+      <div id="networkResult"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
