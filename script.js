@@ -1,26 +1,28 @@
-function checkPhishing() {
-  const url = document.getElementById("urlInput").value;
-  let result = "Safe site!";
-  if (url.includes("phish") || url.includes("fake")) {
-    result = "⚠️ Warning: Potential phishing site/email!";
-  }
-  document.getElementById("phishingResult").innerText = result;
-}
+function checkSite() {
+  const url = document.getElementById("urlInput").value.trim();
+  const resultDiv = document.getElementById("result");
 
-function analyzeLogs() {
-  const logs = document.getElementById("logInput").value;
-  let result = "No suspicious activity detected.";
-  if (logs.includes("failed login")) {
-    result = "⚠️ Suspicious login attempts detected!";
+  if (!url) {
+    resultDiv.innerHTML = "⚠️ Please enter a URL!";
+    resultDiv.className = "";
+    return;
   }
-  document.getElementById("logResult").innerText = result;
-}
 
-function detectAnomaly() {
-  const data = document.getElementById("networkInput").value;
-  let result = "Network looks normal.";
-  if (data.includes("malware") || data.includes("attack")) {
-    result = "⚠️ Anomaly detected in network traffic!";
+  // Simulated phishing database
+  const phishingSites = [
+    "phishy-site.com",
+    "fakebank-login.net",
+    "malware-download.org",
+    "free-gift-card.xyz"
+  ];
+
+  let isPhishing = phishingSites.some(site => url.includes(site));
+
+  if (isPhishing) {
+    resultDiv.innerHTML = "🚨 Warning! This site is Phishing!";
+    resultDiv.className = "phishing";
+  } else {
+    resultDiv.innerHTML = "✅ This site looks Safe.";
+    resultDiv.className = "safe";
   }
-  document.getElementById("networkResult").innerText = result;
 }

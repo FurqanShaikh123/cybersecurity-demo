@@ -3,36 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cybersecurity Threat Detection</title>
+  <title>Cybersecurity Threat Detector</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Cybersecurity Threat Detection</h1>
-  </header>
-
-  <main>
-    <section class="tool">
-      <h2>Phishing Detector</h2>
-      <input type="text" id="urlInput" placeholder="Enter website or email">
-      <button onclick="checkPhishing()">Check</button>
-      <div id="phishingResult"></div>
-    </section>
-
-    <section class="tool">
-      <h2>Suspicious Login Analyzer</h2>
-      <textarea id="logInput" placeholder="Paste login logs"></textarea>
-      <button onclick="analyzeLogs()">Analyze</button>
-      <div id="logResult"></div>
-    </section>
-
-    <section class="tool">
-      <h2>Network Anomaly Detector</h2>
-      <textarea id="networkInput" placeholder="Paste network data"></textarea>
-      <button onclick="detectAnomaly()">Detect</button>
-      <div id="networkResult"></div>
-    </section>
-  </main>
+  <div class="container">
+    <h1>Cybersecurity Threat Detector</h1>
+    <p>Enter a website URL to check if it's safe or phishing:</p>
+    
+    <input type="text" id="urlInput" placeholder="https://example.com">
+    <button onclick="checkSite()">Check Site</button>
+    
+    <div id="result"></div>
+  </div>
 
   <script src="script.js"></script>
 </body>
